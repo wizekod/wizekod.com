@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LexMX — Política de Privacidad & Términos y Condiciones</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:      #0a0a0a;
+    --gray-900:   #1a1a1a;
+    --gray-800:   #2a2a2a;
+    --gray-700:   #3a3a3a;
+    --gray-600:   #525252;
+    --gray-500:   #6e6e6e;
+    --gray-400:   #9a9a9a;
+    --gray-300:   #c4c4c4;
+    --gray-200:   #e0e0e0;
+    --gray-100:   #f2f2f2;
+    --white:      #ffffff;
+    --accent:     #404040;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--white);
+    color: var(--gray-800);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ────────────────────────────────────────────────────────── */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid var(--gray-700);
+    padding: 0 32px;
+    height: 58px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--white); font-size: 20px; font-weight: 700;
+    letter-spacing: .6px;
+  }
+  .nav-brand em { 
+    color: var(--gray-400); 
+    font-style: normal; 
+    font-weight: 600;
+  }
+  .nav-tabs { display: flex; gap: 6px; }
+  .nav-tabs button {
+    background: none; border: 1px solid transparent;
+    color: var(--gray-400); font-family: inherit;
+    font-size: 12px; font-weight: 600;
+    padding: 6px 20px; border-radius: 6px;
+    cursor: pointer; transition: all .25s;
+    letter-spacing: .5px; text-transform: uppercase;
+  }
+  .nav-tabs button:hover { 
+    color: var(--white); 
+    background: var(--gray-900);
+    border-color: var(--gray-700); 
+  }
+  .nav-tabs button.active { 
+    background: var(--white); 
+    color: var(--black); 
+    border-color: var(--white); 
+  }
+
+  /* ─── HERO ───────────────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(180deg, var(--gray-900) 0%, var(--black) 100%);
+    padding: 90px 32px 80px;
+    text-align: center;
+    position: relative; overflow: hidden;
+    border-bottom: 1px solid var(--gray-800);
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 50% 40% at 20% 80%, rgba(255,255,255,.03) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 80% 20%, rgba(255,255,255,.02) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    color: var(--gray-300);
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2.2px;
+    padding: 6px 20px; border-radius: 4px;
+    margin-bottom: 28px;
+    animation: up .7s ease both;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 68px);
+    color: var(--white); font-weight: 700; line-height: 1.1;
+    margin-bottom: 16px;
+    animation: up .7s .1s ease both;
+    letter-spacing: -1px;
+  }
+  .hero h1 .acc { color: var(--gray-400); font-weight: 600; }
+  .hero-sub {
+    color: var(--gray-400); font-size: 16px; font-weight: 300;
+    max-width: 520px; margin: 0 auto 40px;
+    animation: up .7s .2s ease both;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 32px; animation: up .7s .35s ease both;
+  }
+  .hero-meta .m-item { 
+    display: flex; flex-direction: column; align-items: center; gap: 4px; 
+  }
+  .hero-meta .m-label { 
+    color: var(--gray-500); 
+    font-size: 9px; 
+    text-transform: uppercase; 
+    letter-spacing: 1.6px; 
+    font-weight: 700; 
+  }
+  .hero-meta .m-val { 
+    color: var(--gray-200); 
+    font-size: 13px; 
+    font-weight: 500; 
+  }
+
+  @keyframes up { 
+    from { opacity:0; transform:translateY(24px); } 
+    to { opacity:1; transform:translateY(0); } 
+  }
+
+  /* ─── WRAPPER ────────────────────────────────────────────────────── */
+  .wrapper { 
+    max-width: 820px; 
+    margin: 0 auto; 
+    padding: 64px 32px 100px;
+    background: var(--white);
+  }
+
+  /* ─── DOC PANELS ─────────────────────────────────────────────────── */
+  .doc { display: none; animation: fadeIn .4s ease; }
+  .doc.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+  /* ─── HEADINGS ───────────────────────────────────────────────────── */
+  .h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; 
+    color: var(--black); 
+    font-weight: 700;
+    margin: 52px 0 14px;
+    display: flex; align-items: baseline; gap: 14px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--black);
+  }
+  .h1:first-of-type { margin-top: 0; }
+  .h1 .n {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px; 
+    font-weight: 700; 
+    color: var(--white);
+    background: var(--black);
+    padding: 3px 11px; 
+    border-radius: 4px; 
+    flex-shrink: 0;
+  }
+  .h2 {
+    font-size: 16px; 
+    color: var(--gray-700); 
+    font-weight: 600;
+    margin: 28px 0 10px; 
+    padding-left: 16px;
+    border-left: 3px solid var(--gray-800);
+  }
+
+  /* ─── TEXT ───────────────────────────────────────────────────────── */
+  .p { 
+    color: var(--gray-700); 
+    font-size: 14.5px; 
+    line-height: 1.85; 
+    margin-bottom: 14px; 
+  }
+
+  /* ─── BULLET LIST ────────────────────────────────────────────────── */
+  .ul { list-style: none; margin: 10px 0 18px; }
+  .ul li {
+    position: relative; 
+    padding: 7px 0 7px 28px;
+    font-size: 14px; 
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .ul li:last-child { border-bottom: none; }
+  .ul li::before {
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    top: 16px;
+    width: 6px; 
+    height: 6px;
+    background: var(--black); 
+    border-radius: 50%;
+  }
+
+  /* ─── NUMBERED LIST ──────────────────────────────────────────────── */
+  .ol { counter-reset: c; list-style: none; margin: 10px 0 18px; }
+  .ol li {
+    position: relative; 
+    padding: 7px 0 7px 38px;
+    font-size: 14px; 
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-200);
+    counter-increment: c;
+  }
+  .ol li:last-child { border-bottom: none; }
+  .ol li::before {
+    content: counter(c); 
+    position: absolute;
+    left: 0; 
+    top: 9px;
+    width: 24px; 
+    height: 24px; 
+    line-height: 24px;
+    text-align: center; 
+    font-size: 11px; 
+    font-weight: 700;
+    color: var(--white); 
+    background: var(--black); 
+    border-radius: 4px;
+  }
+
+  /* ─── CALLOUT ────────────────────────────────────────────────────── */
+  .callout {
+    background: var(--gray-100);
+    border-left: 4px solid var(--black);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
+    margin: 20px 0 24px;
+  }
+  .callout p { 
+    font-size: 13.8px; 
+    color: var(--gray-800); 
+    margin: 0; 
+    line-height: 1.75; 
+  }
+  .callout .callout-title { 
+    font-weight: 700; 
+    color: var(--black); 
+    margin-bottom: 6px; 
+    font-size: 11.5px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+  }
+
+  /* ─── WARNING ────────────────────────────────────────────────────── */
+  .warning {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin: 22px 0 26px;
+    display: flex; 
+    gap: 14px; 
+    align-items: flex-start;
+  }
+  .warning .w-icon { 
+    font-size: 22px; 
+    flex-shrink: 0; 
+    margin-top: 2px; 
+    filter: grayscale(1);
+  }
+  .warning p { 
+    font-size: 13.8px; 
+    color: var(--gray-200); 
+    margin: 0; 
+    line-height: 1.75; 
+  }
+  .warning strong { color: var(--white); }
+
+  /* ─── CONTACT CARD ───────────────────────────────────────────────── */
+  .contact-card {
+    background: linear-gradient(135deg, var(--gray-900), var(--black));
+    border: 1px solid var(--gray-800);
+    border-radius: 8px;
+    padding: 36px;
+    text-align: center;
+    margin: 40px 0 16px;
+  }
+  .contact-card .cc-name { 
+    font-family: 'Playfair Display', serif; 
+    color: var(--white); 
+    font-size: 22px; 
+    font-weight: 600; 
+    margin-bottom: 6px; 
+  }
+  .contact-card .cc-role { 
+    color: var(--gray-400); 
+    font-size: 13px; 
+    margin-bottom: 18px; 
+  }
+  .contact-card .cc-email {
+    display: inline-block;
+    color: var(--white);
+    font-size: 14px; 
+    font-weight: 500;
+    background: var(--gray-800);
+    padding: 8px 24px; 
+    border-radius: 6px;
+    border: 1px solid var(--gray-700);
+    text-decoration: none;
+    transition: all .25s;
+  }
+  .contact-card .cc-email:hover { 
+    background: var(--gray-700); 
+    border-color: var(--gray-600);
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────────────── */
+  .footer {
+    text-align: center;
+    padding: 40px 32px 56px;
+    background: var(--gray-100);
+    color: var(--gray-500);
+    font-size: 12.5px;
+    border-top: 1px solid var(--gray-200);
+  }
+  .footer a { 
+    color: var(--gray-700); 
+    text-decoration: none; 
+    font-weight: 500;
+  }
+  .footer a:hover { 
+    text-decoration: underline; 
+    color: var(--black);
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+  @media (max-width: 560px) {
+    .nav { padding: 0 20px; height: 54px; }
+    .nav-brand { font-size: 17px; }
+    .nav-tabs button { padding: 5px 14px; font-size: 10.5px; }
+    .hero { padding: 60px 20px 56px; }
+    .wrapper { padding: 44px 20px 72px; }
+    .h1 { font-size: 22px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-brand">Lex<em>MX</em></div>
+  <div class="nav-tabs">
+    <button class="active" onclick="show('pp', this)">Privacidad</button>
+    <button onclick="show('tc', this)">Términos</button>
+  </div>
+</nav>
+
+<!-- ─── HERO ────────────────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-badge">Documentos Legales</div>
+  <h1>Lex<span class="acc">MX</span></h1>
+  <p class="hero-sub">Asistente Legal con Inteligencia Artificial</p>
+  <div class="hero-meta">
+    <div class="m-item"><span class="m-label">Autor</span><span class="m-val">José Carlos García</span></div>
+    <div class="m-item"><span class="m-label">Versión</span><span class="m-val">1.0</span></div>
+    <div class="m-item"><span class="m-label">Vigencia</span><span class="m-val">31 de enero de 2026</span></div>
+    <div class="m-item"><span class="m-label">Soporte</span><span class="m-val">jose.garcia@wizekod.com</span></div>
+  </div>
+</header>
+
+<!-- ─── WRAPPER ─────────────────────────────────────────────────────────── -->
+<div class="wrapper">
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       POLÍTICA DE PRIVACIDAD
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section id="pp" class="doc active">
+
+    <div class="h1"><span class="n">1</span> Introducción</div>
+    <p class="p">Esta Política de Privacidad describe la forma en la que LexMX, desarrollada por José Carlos García, interactúa con sus usuarios. Al acceder y utilizar la aplicación LexMX, usted acepta los términos de esta política.</p>
+    <p class="p">LexMX es una aplicación de asistencia legal basada en inteligencia artificial, diseñada para proporcionar orientación jurídica general. Esta política aplica a todas las versiones de la aplicación y a cualquier servicio relacionado.</p>
+
+    <div class="h1"><span class="n">2</span> No recopilación de datos personales</div>
+    <div class="callout">
+      <div class="callout-title">Compromiso de privacidad</div>
+      <p><strong>LexMX no recopila, almacena ni procesa información personal del usuario.</strong> La aplicación está diseñada para funcionar de manera anónima, sin necesidad de crear cuentas ni proporcionar datos identificativos.</p>
+    </div>
+    <p class="p">De manera específica, LexMX:</p>
+    <ul class="ul">
+      <li>No solicita nombre, correo electrónico ni cualquier otro dato personal.</li>
+      <li>No requiere la creación de una cuenta para acceder a sus funcionalidades.</li>
+      <li>No registra ni almacena el historial de consultas del usuario en servidores externos.</li>
+      <li>No recopila datos de ubicación, dirección IP ni información del dispositivo para fines de identificación.</li>
+      <li>No instala cookies ni tecnologías de rastreo destinadas a identificar al usuario.</li>
+    </ul>
+
+    <div class="h1"><span class="n">3</span> Funcionamiento local y sin almacenamiento</div>
+    <p class="p">Las consultas legales realizadas por el usuario se procesan de manera transitoria a través de la tecnología de inteligencia artificial integrada en la aplicación. Una vez que la sesión finaliza, no se conserva ningún registro de las interacciones en servidores ni bases de datos.</p>
+    <p class="p">La aplicación no transmite datos personales a terceros, proveedores de servicios ni a cualquier otra entidad externa.</p>
+
+    <div class="h1"><span class="n">4</span> Uso de cookies y tecnologías similares</div>
+    <p class="p">LexMX <strong>no utiliza cookies</strong> ni ninguna otra tecnología de rastreo (como almacenamiento local o web beacons) con la finalidad de identificar, perfilar o hacer seguimiento del usuario. Si la plataforma sobre la que se ejecuta la aplicación implementa cookies propios (ej. el sistema operativo o el navegador), estos escapan del control de LexMX.</p>
+
+    <div class="h1"><span class="n">5</span> Datos de menores de edad</div>
+    <p class="p">Dado que LexMX no recopila datos personales de ningún usuario, no existe riesgo de que se almacene información de menores de edad. Sin embargo, se recomienda que los menores de 18 años utilicen la aplicación bajo la supervisión de un adulto responsable.</p>
+
+    <div class="h1"><span class="n">6</span> Compartir de información con terceros</div>
+    <p class="p">Como LexMX no recopila ni almacena datos personales del usuario, no hay información susceptible de ser compartida con terceros. La aplicación no transmite datos identificativos a ninguna entidad externa en ninguna circunstancia.</p>
+
+    <div class="h1"><span class="n">7</span> Seguridad</div>
+    <p class="p">Aunque la aplicación no almacena datos personales, el Desarrollador ha adoptado medidas técnicas adecuadas para garantizar que las comunicaciones entre la aplicación y los servicios de inteligencia artificial sean seguras, utilizando protocolos de cifrado estándar (HTTPS/TLS).</p>
+
+    <div class="h1"><span class="n">8</span> Derechos del usuario</div>
+    <p class="p">En vista de que LexMX no recopila ni almacena datos personales, no es posible ejercer derechos de acceso, rectificación, cancelación o portabilidad sobre datos que no existen en nuestros sistemas. El usuario puede utilizar la aplicación con plena confianza en el respeto de su privacidad.</p>
+
+    <div class="h1"><span class="n">9</span> Modificaciones a esta Política</div>
+    <p class="p">José Carlos García se reserva el derecho a modificar esta Política de Privacidad en cualquier momento. Los cambios significativos serán comunicados mediante un aviso en la aplicación. El uso continuo de LexMX tras la publicación de los cambios implica la aceptación de la nueva versión.</p>
+
+    <div class="h1"><span class="n">10</span> Contacto y soporte</div>
+    <p class="p">Si tiene preguntas o preocupaciones sobre esta Política de Privacidad, no dude en comunicarse con:</p>
+    <div class="contact-card">
+      <div class="cc-name">José Carlos García</div>
+      <div class="cc-role">Desarrollador de LexMX</div>
+      <a href="mailto:jose.garcia@wizekod.com" class="cc-email">jose.garcia@wizekod.com</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       TÉRMINOS Y CONDICIONES
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section id="tc" class="doc">
+
+    <div class="warning">
+      <div class="w-icon">⚠️</div>
+      <p><strong>Atención:</strong> Al instalar, abrir o utilizar la aplicación LexMX, usted acepta estar vinculado por estos Términos y Condiciones. Si no acepta alguna parte de estos términos, por favor no utilice la aplicación.</p>
+    </div>
+
+    <div class="h1"><span class="n">1</span> Aceptación de los Términos</div>
+    <p class="p">Estos Términos y Condiciones (en adelante, «los Términos») constituyen un acuerdo legalmente vinculante entre usted (en adelante, «el Usuario») y José Carlos García, desarrollador de la aplicación LexMX (en adelante, «el Desarrollador»). Al utilizar la aplicación, el Usuario acepta incondicionalmente estos Términos.</p>
+
+    <div class="h1"><span class="n">2</span> Descripción del servicio</div>
+    <p class="p">LexMX es una aplicación que emplea tecnología de inteligencia artificial para proporcionar orientación jurídica general a sus usuarios. La aplicación abarca áreas del derecho tales como, pero no limitado a: derecho civil, derecho laboral, derecho familiar, derecho penal y derecho mercantil.</p>
+    <div class="warning">
+      <div class="w-icon">⚠️</div>
+      <p><strong>Importante:</strong> LexMX ofrece información legal general y orientativa. <strong>No constituye asesoramiento legal profesional</strong> ni reemplaza la consulta con un abogado habilitado. El usuario es responsable de buscar asesoría profesional antes de tomar decisiones legales.</p>
+    </div>
+
+    <div class="h1"><span class="n">3</span> Uso de la aplicación sin cuenta</div>
+    <p class="p">LexMX está diseñada para ser utilizada de manera anónima. <strong>No se requiere la creación de una cuenta</strong> ni la proporción de datos personales para acceder a las funcionalidades de la aplicación. El usuario puede realizar consultas legales directamente sin registrarse.</p>
+    <p class="p">En virtud de lo anterior, el usuario no tiene obligación de proporcionar información personal ni de crear credenciales de acceso.</p>
+
+    <div class="h1"><span class="n">4</span> Uso permitido y uso prohibido</div>
+    <div class="h2">4.1 Uso permitido</div>
+    <p class="p">El Usuario podrá utilizar LexMX exclusivamente para obtener orientación jurídica general, realizar consultas legales y acceder a los recursos informativos proporcionados por la aplicación, siempre de manera personal y no comercial.</p>
+    <div class="h2">4.2 Uso prohibido</div>
+    <p class="p">Queda estrictamente prohibido:</p>
+    <ul class="ul">
+      <li>Utilizar la aplicación para actividades ilegales o que vulneren derechos de terceros.</li>
+      <li>Intentar acceder de manera no autorizada a sistemas, datos o áreas restringidas.</li>
+      <li>Reproducir, modificar o distribuir el contenido de la aplicación sin autorización previa del Desarrollador.</li>
+      <li>Utilizar la información proporcionada por LexMX como sustituto de la consulta profesional legal.</li>
+      <li>Realizar ingeniería inversa, descompilación o desmontaje del código de la aplicación.</li>
+      <li>Enviar contenido malicioso, spam o información falsa a través de la aplicación.</li>
+      <li>Suplanter la identidad de otro usuario o de profesionales legales.</li>
+    </ul>
+
+    <div class="h1"><span class="n">5</span> Propiedad intelectual</div>
+    <p class="p">Todos los derechos de propiedad intelectual sobre la aplicación LexMX, incluyendo su código fuente, diseño, marca comercial, logotipo y contenido generado por el sistema, son propiedad exclusiva de José Carlos García. El uso de la aplicación no confiere al Usuario ningún derecho de propiedad intelectual sobre estos elementos.</p>
+    <p class="p">El Usuario podrá ver y utilizar el contenido de la aplicación únicamente para uso personal y dentro de los límites establecidos en estos Términos.</p>
+
+    <div class="h1"><span class="n">6</span> Limitación de la responsabilidad</div>
+    <p class="p">LexMX y su Desarrollador no serán responsables por:</p>
+    <ul class="ul">
+      <li>Daños directos, indirectos, especiales o consecuentes derivados del uso o de la incapacidad de uso de la aplicación.</li>
+      <li>La inexactitud de la información legal proporcionada, dado que el contenido es generado por inteligencia artificial y no ha sido verificado por un profesional legal certificado.</li>
+      <li>Decisiones legales tomadas por el Usuario basándose exclusivamente en la información de la aplicación.</li>
+      <li>Interrupciones del servicio, errores técnicos o fallos de conectividad.</li>
+    </ul>
+    <div class="callout">
+      <div class="callout-title">Límite de responsabilidad</div>
+      <p>La responsabilidad total del Desarrollador se limita al valor real de los daños directamente causados por su negligencia, sin exceder el monto pagado por el Usuario en los últimos 12 meses por los servicios de LexMX.</p>
+    </div>
+
+    <div class="h1"><span class="n">7</span> Exención de garantías</div>
+    <p class="p">La aplicación LexMX se proporciona «tal cual» y «sin garantías» de cualquier tipo. El Desarrollador no otorga garantías expresas ni implícitas, incluyendo, sin limitación, garantías de comerciabilidad, idoneidad para un propósito particular o de no infracción de derechos de terceros.</p>
+    <p class="p">El uso de la aplicación es a riesgo exclusivo del Usuario.</p>
+
+    <div class="h1"><span class="n">8</span> Pagos y suscripciones</div>
+    <p class="p">LexMX puede ofrecer funcionalidades gratuitas y/o planes de suscripción de pago. En caso de que el Usuario opte por un servicio de pago:</p>
+    <ol class="ol">
+      <li>Todos los pagos serán procesados de manera segura a través de las plataformas de pago autorizadas.</li>
+      <li>Los cargos serán realizados según el ciclo de facturación seleccionado.</li>
+      <li>El Usuario podrá cancelar su suscripción en cualquier momento desde la configuración correspondiente.</li>
+      <li>Los reembolsos estarán sujetos a la política de reembolsos vigente al momento de la compra.</li>
+    </ol>
+
+    <div class="h1"><span class="n">9</span> Modificaciones a estos Términos</div>
+    <p class="p">El Desarrollador se reserva el derecho a modificar estos Términos en cualquier momento. Los cambios serán comunicados al Usuario mediante un aviso en la aplicación al menos 15 días hábiles antes de su entrada en vigor. El uso continuo de la aplicación tras la fecha de vigencia de los cambios implica la aceptación de los nuevos Términos.</p>
+
+    <div class="h1"><span class="n">10</span> Derecho aplicable y resolución de conflictos</div>
+    <p class="p">Estos Términos estarán gobernados e interpretados de conformidad con las leyes de México, sin considerar sus principios de conflicto de leyes. En caso de controversia, las partes se comprometen a intentar resolverla primero mediante negociación de buena fe. Si no se alcanza acuerdo en un plazo de 30 días calendario, la controversia será sometida a los tribunales competentes en la Ciudad de México, México.</p>
+
+    <div class="h1"><span class="n">11</span> Disposiciones generales</div>
+    <ol class="ol">
+      <li>Estos Términos representan el acuerdo completo entre el Usuario y el Desarrollador sobre el uso de LexMX.</li>
+      <li>Si alguna disposición de estos Términos se considera inválida o no aplicable, las demás disposiciones seguirán en vigencia.</li>
+      <li>El Desarrollador no incurrirá en responsabilidad por retrasos o fallos cuando estos sean atribuibles a causas de fuerza mayor.</li>
+      <li>El hecho de que el Desarrollador no haga valer algún derecho bajo estos Términos no constituye una renuncia a dicho derecho.</li>
+      <li>Estos Términos no crean ninguna relación de agencia, sociedad ni empleo entre el Usuario y el Desarrollador.</li>
+    </ol>
+
+    <div class="h1"><span class="n">12</span> Contacto y soporte</div>
+    <p class="p">Para cualquier pregunta, reclamación o solicitud relacionada con estos Términos y Condiciones, el Usuario puede comunicarse con:</p>
+    <div class="contact-card">
+      <div class="cc-name">José Carlos García</div>
+      <div class="cc-role">Desarrollador de LexMX</div>
+      <a href="mailto:jose.garcia@wizekod.com" class="cc-email">jose.garcia@wizekod.com</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ─── FOOTER ──────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <p>© 2026 LexMX — Desarrollado por José Carlos García &nbsp;|&nbsp; <a href="mailto:jose.garcia@wizekod.com">jose.garcia@wizekod.com</a></p>
+</footer>
+
+<!-- ─── JS ──────────────────────────────────────────────────────────────── -->
+<script>
+  function show(id, btn) {
+    document.querySelectorAll('.doc').forEach(function(d) { d.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav-tabs button').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    window.scrollTo({ top: document.querySelector('.hero').offsetHeight, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
